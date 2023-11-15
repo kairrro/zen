@@ -12,3 +12,6 @@ If you encounter any bugs, be sure to post about it in the issues tab!
 4. Open `http://localhost:3000` in your browser
 
 ## Previews
+![image](https://raw.githubusercontent.com/damnkyro/zen/main/public/showcase/discord.png)
+![image](https://raw.githubusercontent.com/damnkyro/zen/main/public/showcase/first.png)
+![image](https://raw.githubusercontent.com/damnkyro/zen/main/public/showcase/roblox.png)
