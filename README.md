@@ -14,3 +14,6 @@ If you encounter any bugs, be sure to post about it in the issues tab!
 ## Previews
 ![image](https://raw.githubusercontent.com/damnkyro/zen/main/public/showcase/discord.png)
 ![image](https://raw.githubusercontent.com/damnkyro/zen/main/public/showcase/roblox.png)
+
+## Notes
+I'll be remaking zen soon. This project currently feels bloated and there are also some errors with it. I'mma deliver tho, trust
