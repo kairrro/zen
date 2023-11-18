@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zen</title>
+        <link rel="icon" href="media/pfp.jpg" type="image/jpg">
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: rgb(222, 222, 222);
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .background {
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-image: url('media/background.jpg');
+                opacity: 1;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                z-index: -1;
+            }
+
+            .background::before {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                content: "";
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+    
+            .title {
+                margin-top: 60px;
+                font-size: 25px;
+                color: #657de9de;
+                text-shadow: 0 0 13px #657de9de;
+}
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 100px;
+                width: 800px;
+                height: 400px;
+                background-color: rgba(37, 36, 36, 0.5);
+                padding: 20px; 
+                border-radius: 15px;
+            }
+
+            .image-border {
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                border-radius: 100%;
+                top: 50px;
+                box-shadow: 0 5px 20px 2px #000000;
+            }
+
+            .form-input {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                margin-top: 18px;
+            }
+
+            .form-input input {
+                width: 350px;
+                height: 25px;
+                border: none;
+                background: none;
+                border-bottom: 2px solid #D1D1D4;
+                font-family: 'Poppins';
+                font-size: 14px;
+                outline: none;
+                padding-bottom: 4px;
+                color: rgb(222, 222, 222);
+            }
+
+            .form-button {
+                margin-top: 10px;
+                font-family: 'Poppins';
+                width: 200px;
+                height: 40px;
+                background-color: rgba(101, 125, 233, 0.87); 
+                color: #fff; 
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+                margin-left: auto;
+                margin-right: auto;
+                transition: background-color 0.3s ease;
+            }
+
+            .form-button:hover {
+                background-color: rgba(62, 91, 219, 0.87); 
+            }
+
+            p {
+                margin-top: -12px;
+                font-size: 12px;
+            }
+
+            .author {
+                margin-top: 42px;
+                font-size: 12px;
+            }
+
+            .author:hover {
+                color: rgba(101, 125, 233, 0.87);
+            }
+
+            a {
+                color: inherit; 
+                text-decoration: none; 
+            }
+
+            select {
+                width: 355px;
+                height: 35px;
+                border: none;
+                background: none;
+                border-bottom: 2px solid #D1D1D4;
+                font-family: 'Poppins', sans-serif;
+                font-size: 14px;
+                color: rgb(222, 222, 222);
+                outline: none;
+                cursor: pointer;
+            }
+
+            option {
+                font-family: 'Poppins';
+                font-size: 13px;
+                color: rgb(42, 42, 42);
+                overflow: hidden;
+                padding-bottom: 5px;
+                box-sizing: border-box;
+                height: 20px;
+            }
+
+            .status-box {
+                display: none;
+                align-items: center;
+                position: fixed;
+                padding: 20px;
+                width: auto;
+                height: 10px;
+                font-size: 14px;
+                white-space: nowrap;
+                border-left: 5px solid rgba(68, 202, 142, 0.6);
+                background-color: rgba(37, 36, 36, 0.5);
+                top: 0;
+                right: 0;
+                margin: 20px;
+                opacity: 0;
+                transition: opacity 1.5s ease-in-out;
+            }
+
+            .status-box.show {
+                display: flex;
+                opacity: 1;
+            }
+
+            .status-box.error {
+                border-left: 5px solid rgba(240, 57, 44, 0.6);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="background"></div>
+
+        <div class="container">
+            <img src="media/pfp.jpg" alt="Profile Picture" class="image-border">
+            <h1 class="title">Zen</h1>
+            <p>Discord Webhook Hitter</p>
+            
+            <div class="form-input">
+                <input type="text" id="webhook" placeholder="Webhook" autocomplete="off" required>
+                <select id="type">
+                    <option value="roblox">Roblox</option>
+                    <option value="discord">Discord</option>
+                </select>
+
+                <button class="form-button" onclick="submit(event)" type="button">
+                    <span id="button-text">Hit Webhook</span>
+                </button>
+            </div>
+            <a href="https://github.com/damnkyro" target="_blank" class="author">made by kyro</a>
+
+            <div class="status-box">
+            </div>
+        </div>
+
+        <script>
+            async function submit(){
+                var webhook = document.getElementById("webhook").value;
+                var type = document.getElementById("type").value;
+                var statusBox = document.querySelector(".status-box");
+
+                if (!webhook.startsWith("https://discord.com/api/webhooks/")){
+                    alert("Invalid webhook URL");
+                    return;
+                };
+
+                let endpoint;
+
+                switch(type){
+                    case "discord":
+                        endpoint = "api/discord";
+                        break;
+
+                    case "roblox":
+                        endpoint = "api/roblox";
+                        break;
+                }
+
+                const payload = {
+                    "webhook" : webhook,
+                };
+
+                document.getElementById("button-text").innerText = "Sending...";
+
+                function showStatus(text, isError = true){
+                    statusBox.innerText = text;
+                    statusBox.classList.add("show");
+                    
+                    if (isError) {
+                        statusBox.classList.add("error");
+                    }
+
+                    setTimeout(() => {
+                        statusBox.classList.remove("show", "error");
+                        statusBox.innerText = "";
+                    }, 3000);
+                }
+
+                try {
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type' : 'application/json',
+                        },
+                        body: JSON.stringify(payload),
+                });
+                
+                const data = await response.json();
+                const responseData = data.message;
+
+                if (response.ok){
+                    console.log("Fake credentials sent!");
+                    showStatus(responseData, false);
+                }
+
+                else {
+                    console.error(`An error occurred`);
+                    statusBox.classList.add("error");
+                    showStatus(responseData, true);
+                }
+
+                } catch (error) {
+                    console.error(`An error occurred: ${error}`);
+                    showStatus(`An error occurred: ${error}`, true);
+
+                } finally {
+                    document.getElementById("button-text").innerText = "Hit Webhook";
+                }
+            } 
+        </script>
+    </body>
+</html>

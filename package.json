@@ -1,0 +1,11 @@
+{
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    },
+    "dependencies": {
+        "node-fetch": "^3.3.2"
+    }
+}
