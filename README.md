@@ -5,10 +5,9 @@ I made this project with Express JS.
 
 ## How to use
 1. Make sure you have [Node.js](https://nodejs.org/) installed
-2. Enter the project directory
-3. Run `npm install` to get the dependencies
-4. Run `npm start` to run the program
-5. Open `http://localhost:3000/`
+2. Run `npm install` to get the dependencies
+3. Run `npm start` to run the program
+4. Open `http://localhost:3000/`
 
 ## How it works
 Zen has a list of random roblox ID's, image URL's and a few scraped discord usernames in the `public/media/files` directory. Every time you send a fake log, it takes information randomly from it and sends it to the webhook of choice.
