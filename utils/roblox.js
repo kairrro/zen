@@ -50,7 +50,7 @@ async function formatDate(inputDate){
 }
 
 async function robloxAPI() {
-    const filePath = './public/media/files/ids.txt';
+    const filePath = './public/media/files/robloxIDs.txt';
     const lines = [];
   
     const readStream = createInterface({
