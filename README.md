@@ -19,7 +19,7 @@ Be sure to post it in the issues tab with a screenshot of how it was gotten or t
 ## Preview
 ![image](https://raw.githubusercontent.com/damnkyro/media/main/media/zen-media/panel.png)
 
-<div style="display: flex; justify-content: space-between;">
-    ![image](https://raw.githubusercontent.com/damnkyro/media/main/media/zen-media/discord.png)
-    ![image](https://raw.githubusercontent.com/damnkyro/media/main/media/zen-media/roblox.png)
-</div>
+![image](https://raw.githubusercontent.com/damnkyro/media/main/media/zen-media/discord.png)
+
+![image](https://raw.githubusercontent.com/damnkyro/media/main/media/zen-media/roblox.png)
+
