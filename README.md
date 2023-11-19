@@ -17,6 +17,6 @@ Zen has a list of random roblox ID's, image URL's and a few scraped discord user
 Be sure to post it in the issues tab with a screenshot of how it was gotten or the console log.
 
 ## Preview
-![image](https://raw.githubusercontent.com/damnkyro/media/blob/main/media/zen-media/panel.png)
-![image](https://raw.githubusercontent.com/damnkyro/media/blob/main/media/zen-media/discord.png)
-![image](https://raw.githubusercontent.com/damnkyro/media/blob/main/media/zen-media/roblox.png)
+![image](https://raw.githubusercontent.com/damnkyro/media/main/media/zen-media/panel.png)
+![image](https://raw.githubusercontent.com/damnkyro/media/main/media/zen-media/discord.png)
+![image](https://raw.githubusercontent.com/damnkyro/media/main/media/zen-media/roblox.png)
